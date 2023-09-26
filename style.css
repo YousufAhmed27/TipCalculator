@@ -1,0 +1,317 @@
+:root {
+    --Strongcyan: rgb(38, 192, 171);
+    --Verydarkcyan: rgb(0, 73, 77);
+    --Darkgrayishcyan: rgb(94, 122, 125);
+    --Grayishcyan: rgb(127, 156, 159);
+    --Lightgrayishcyan: rgb(197, 228, 231);
+    --Verylightgrayishcyan: rgb(244, 250, 250);
+    --White: rgb(255, 255, 255);
+}
+
+@font-face {
+    font-family: space-mono;
+    src: url(SpaceMono-Regular.ttf);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+body {
+    background-color: var(--Lightgrayishcyan);
+    font-family: space-mono;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.container {
+    background-color: var(--White)
+}
+
+.container .contain {
+    width: 100%;
+    height: 100%;
+    display: grid;
+}
+
+.container .contain .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container .contain .text .in {
+    width: 100%;
+    position: relative;
+}
+
+.container .contain .text .label {
+    width: 100%;
+    color: var(--Grayishcyan);
+    font-size: 18px;
+}
+
+.container .contain .text .in input {
+    width: 100%;
+    height: 50px;
+    font-size: 24px;
+    color: var(--Grayishcyan);
+    text-align: end;
+    border-radius: 8px;
+    background-color: rgb(197, 228, 231, 0.4);
+    border: none;
+}
+
+.container .contain .text .in input.done {
+    border: 2px var(--Strongcyan) solid;
+}
+
+.container .contain .text .in input.err {
+    border: 2px red solid
+}
+
+.container .contain .text .in .errors div {
+    color: red;
+    position: absolute;
+    right: 2px;
+    top: 3px;
+    visibility: hidden;
+}
+
+.container .contain .text .in img {
+    position: absolute;
+    bottom: 18px;
+    left: 11px;
+}
+
+.container .contain .text .select .choice {
+    display: flex;
+    width: 100%;
+    height: 150px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+}
+
+
+.choice div,
+.choice input,
+.choice span {
+    background-color: var(--Verydarkcyan);
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 23px;
+}
+
+.choice .custom {
+    position: absolute;
+    visibility: hidden;
+}
+
+.choice div:hover,
+.choice div.active,
+.choice .custom {
+    background-color: rgb(38, 192, 171, 0.5);
+    color: var(--Verydarkcyan);
+    font-weight: bold;
+}
+
+.choice input {
+    background-color: rgb(197, 228, 231, 0.3);
+    font-weight: bold;
+    border: none;
+    color: black;
+    padding: 5px;
+}
+
+.container .contain .screen {
+    background-color: var(--Verydarkcyan);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .contain .screen .numbers {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container .contain .screen .numbers .one {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.container .contain .screen .numbers .one .label {
+    display: flex;
+    flex-direction: column;
+}
+
+.container .contain .screen .numbers .one .label div {
+    color: var(--White);
+    font-size: 18px;
+}
+
+.container .contain .screen .numbers .one .label span {
+    color: rgb(255, 255, 255, 0.5);
+    font-size: 13px;
+}
+
+.container .contain .screen .numbers .one .dolar {
+    font-size: 30px;
+    color: var(--Strongcyan);
+    font-weight: bold;
+}
+
+.screen button {
+    width: 100%;
+    height: 47px;
+    font-size: 20px;
+    background-color: var(--Strongcyan);
+    opacity: 0.2;
+    color: var(--Verydarkcyan);
+    border-radius: 10px;
+    cursor: not-allowed
+}
+
+.screen button.done {
+    opacity: 1;
+    cursor: pointer;
+}
+
+
+.screen button.done:hover {
+    opacity: 0.7
+}
+
+@media only screen and (min-width:1000px) {
+    body {
+        width: 1440px;
+        height: 1024px;
+    }
+
+    .container {
+        width: 921px;
+        height: 483px;
+        padding: 35px;
+        border-radius: 50px;
+    }
+
+    .container .contain {
+        grid-template-columns: 381px 412px;
+        gap: 50px;
+    }
+
+    .container .contain .text {
+        gap: 45px
+    }
+
+    .container .contain .screen {
+        grid-area: 1/2;
+    }
+
+    .choice div,
+    .choice input,
+    .choice span {
+        width: 30%;
+        height: 50px;
+    }
+
+    .choice .custom {
+        width: 114.28px;
+        bottom: 25px;
+        right: 2px;
+    }
+
+    .container .contain .screen {
+        padding: 35px;
+    }
+
+    .container .contain .screen .numbers {
+        width: 340px;
+        height: 142px;
+    }
+}
+
+@media only screen and (max-width:375px) {
+    body {
+        width: 375px;
+        height: 933px;
+    }
+
+    .container {
+        width: 375px;
+        height: 790px;
+        padding: 25px;
+        border-radius: 50px 50px 0 0;
+    }
+
+    .contain {
+        grid-template-columns: 327px;
+        grid-template-rows: 434px 257px;
+        gap: 25px;
+    }
+
+    .container .contain .text {
+        gap: 35px
+    }
+
+    .attribution {
+        font-size: 10px
+    }
+
+    .in input {
+        padding-right: 10px;
+    }
+
+    .choice div,
+    .choice input,
+    .choice span {
+        width: 47%;
+        height: 50px;
+        margin-top: 10px;
+    }
+
+    .choice .custom {
+        width: 153.69px;
+        bottom: -31px;
+        right: -1px;
+    }
+
+    .container .contain .screen {
+        padding: 15px;
+    }
+
+    .container .contain .screen .numbers {
+        width: 290px;
+        height: 100px;
+        margin-top: 30px;
+    }
+}
